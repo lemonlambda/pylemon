@@ -31,8 +31,9 @@ ENTITY("mk02-fluid-wagon"):set_fields{
   capacity = 100000,
   collision_box = collision_box_fluid,
   selection_box = selection_box_fluid,
-    connection_distance = connection_distance_fluid,
-    joint_distance = joint_distance_fluid,
+  connection_distance = connection_distance_fluid,
+  joint_distance = joint_distance_fluid,
+  tank_count = 3,
 }
 
 if mods.pyhightech then
@@ -49,6 +50,7 @@ if mods.pyhightech then
     selection_box = selection_box_fluid,
     connection_distance = connection_distance_fluid,
     joint_distance = joint_distance_fluid,
+    tank_count = 3,
   }
 end
 
@@ -66,6 +68,7 @@ if mods.pyalternativeenergy then
     selection_box = selection_box_fluid,
     connection_distance = connection_distance_fluid,
     joint_distance = joint_distance_fluid,
+    tank_count = 3,
   }
 end
 
