@@ -3,6 +3,11 @@ Version: 1.1.0
 Date: 2025-10-31
   Changes:
     - Chromium 3 Rework, Chromium 4 and 5 require Chromium 3 now, plus Chromium 3 buff!
+    - Antimony 2 Rework, Antimony output multiplied by 3x.
+    - Coal 3 and 4 Rework, output multiplied by 25x.
+    - Kevlar 2 Rework, output multiplied by 4x.
+    - Epoxy recipe from Collagen Tech buff.
+    - Split Train Standardization into Size and Storage Size.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2025-08-22
