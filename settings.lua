@@ -54,4 +54,10 @@ data:extend {
         setting_type = "startup",
         default_value = false
     },
+    {
+        type = "bool-setting",
+        name = "pylemon-carbon-black-to-graphite",
+        setting_type = "startup",
+        default_value = false
+    },
 }
