@@ -2,6 +2,30 @@ if not settings.startup["pylemon-carbon-black-to-graphite"].value then
     return
 end
 
+
+
+-- 40 sulfuric + 10 phosphoric --> 50 spam 
+--      chem plant
+--
+-- spam + carbon-black + fluorine -> carbon-black-solution 
+--      mixer 
+--
+-- carbon-black-solution + peroxide + water -> pre-graphite + steam
+--      centrifuge 
+--
+-- precarbon-black + hcl -> graphite
+--      evaporator
+
+
+ITEM {
+    type = "item",
+    name = "pre-graphite",
+    icon = "__pylemon__/graphics/icons/thefinal.png",
+    icon_size = 64,
+    stack_size = 1000
+}
+
+
 FLUID {
     type = "fluid",
     name = "sulfuric-phosphoric-acid-mixture",
@@ -22,6 +46,7 @@ FLUID {
     flow_color = { 1.0, 1.0, 1.0, 1.0 }
 }
 
+
 RECIPE {
     type = "recipe",
     name = "sulfuric-phosphoric-acid-solution",
@@ -30,19 +55,19 @@ RECIPE {
         {
             type = "fluid",
             name = "sulfuric-acid",
-            amount = 100
+            amount = 40
         },
         {
             type = "fluid",
             name = "phosphoric-acid",
-            amount = 100
+            amount = 10
         }
     },
     results = {
         {
             type = "fluid",
             name = "sulfuric-phosphoric-acid-mixture",
-            amount = 100
+            amount = 50
         }
     }
 }:add_unlock("graphene")
@@ -55,45 +80,93 @@ RECIPE {
         {
             type = "item",
             name = "carbon-black",
-            amount = 100
+            amount = 4
         },
         {
             type = "fluid",
             name = "sulfuric-phosphoric-acid-mixture",
-            amount = 100
+            amount = 20
         },
+        {
+            type = "fluid",
+            name = "fluorine-gas",
+            amount = 5
+        }
     },
     results = {
         {
             type = "fluid",
             name = "carbon-black-solution",
-            amount = 100
+            amount = 40
         }
     }
 }:add_unlock("graphene")
 
 RECIPE {
     type = "recipe",
-    name = "centrifuging-carbon-black-solution",
-    category = "centrifuging",
+    name = "mixing-carbon-black-solution",
+    category = "mixer",
     ingredients = {
         {
             type = "fluid",
             name = "carbon-black-solution",
-            amount = 100
+            amount = 50,
+        },
+        {
+            type = "fluid",
+            name = "hydrogen-peroxide",
+            amount = 10
+        },
+        {
+            type = "fluid",
+            name = "water",
+            amount = 20
+        },
+    },
+    results = {
+        {
+            type = "item",
+            name = "pre-graphite",
+            amount = 9
+        },
+        {
+            type = "fluid",
+            name = "steam",
+            amount = 20
         }
+    },
+    main_product = "pre-graphite",
+    allow_productivity = true,
+}:add_unlock("graphene")
+
+RECIPE {
+    type = "recipe",
+    name = "evaporating-pre-graphite",
+    category = "centrifuging",
+    ingredients = {
+        {
+            type = "item",
+            name = "pre-graphite",
+            amount = 2
+        },
+        {
+            type = "fluid",
+            name = "hydrogen-chloride",
+            amount = 20
+        },
     },
     results = {
         {
             type = "item",
             name = "graphite",
-            amount = 100
+            amount = 5
         },
         {
             type = "fluid",
-            name = "tar",
-            amount = 100
+            name = "coal-gas",
+            amount = 10
         }
     },
     main_product = "graphite",
+    allow_productivity = true,
 }:add_unlock("graphene")
