@@ -3,6 +3,7 @@ Version: 1.2.0
 Date: 2025-11-01
   Changes:
     - New carbon black -> graphite chain.
+    - Added recipes for alloy casting of Nexelit Antimony Alloy
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2025-10-31

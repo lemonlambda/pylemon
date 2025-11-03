@@ -6,5 +6,4 @@ require("prototypes.coal3-and-4-fix")
 require("prototypes.kevlar2-fix")
 require("prototypes.epoxy-collagen-fix")
 require("prototypes.carbon-black-to-graphite")
-
-require("prototypes.require-all")
+require("prototypes.nexelit-antimony-alloy-casting")
